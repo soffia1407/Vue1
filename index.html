@@ -25,16 +25,18 @@
                 <a v-bind:href="link">More products like this</a>
                 <p v-if="inventory > 10">In Stock</p>
                 <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
-                <p v-else>Out of Stock</p>
+                <p v-else :class="{ 'line-through': !inStock }">Out of Stock</p> <!--почему не зачеркивается?-->
                 <span v-bind="onSale">On Sale!</span>
                 <ul>
                     <li v-for="detail in details">{{ detail }}</li>
                 </ul>
-                <div v-for="variant in variants" :key="variant.variantId">
-                    <p @mouseover="updateProduct(variant.variantImage)">
-                        {{ variant.variantColor }}
-                    </p>
-                 </div>                 
+                <div
+                    class="color-box"
+                    v-for="variant in variants"
+                    :key="variant.variantId"
+                    :style="{ backgroundColor:variant.variantColor }"
+                    @mouseover="updateProduct(variant.variantImage)">
+                </div>
                 <ul class="size"> Size, what we have:
                     <li v-for="size in sizes">{{ size }}</li>
                 </ul>
@@ -47,7 +49,8 @@
         </div>
 
 
-        <button v-on:click="addToCart">Add to cart</button>
+        <button v-on:click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock}">Add to cart</button> <!--:class="{ disabledButton: !inStock}"-- 
+        почему тут даже без этого кнопка показывается, как не работающая, по виду, а в методичке было написано, что для этого нужна эта строчка-->
         <button v-on:click="deleteFromCart">Delete from cart</button>
     </div>
 
