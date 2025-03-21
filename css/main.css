@@ -1,0 +1,98 @@
+body {
+    color: #333;
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 20px; 
+}
+
+.nav-bar {
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    margin: 20px auto; 
+}
+
+.product-image {
+    width: 100%;
+    max-width: 600px; 
+}
+
+.color-box {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 20%;
+}
+
+.cart {
+    float: right;
+    margin-right: 25px;
+    padding: 8px 15px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    background-color: #548f56;
+    color: white;
+    height: 35px;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.disabledButton {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.review-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff; 
+    border-radius: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.tab {
+    margin-left: 20px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.tab:hover {
+    background-color: #ddd; 
+}
+
+.activeTab {
+    color: #388649;
+    text-decoration: underline;
+}
